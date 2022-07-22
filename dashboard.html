@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DashBoard</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+
+  <link rel="stylesheet" href="plugins/DashboardStyle.css">
+  <!--Line Awosome Icons-->
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="dist/img/logo2.jpeg" alt="AdminLTELogo" height="100" width="100">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+<!---   <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.html" class="nav-link">Home</a>
+      </li>-->
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">Contact</a>
+      </li>
+    </ul>
+    
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Navbar Search 
+      <li class="nav-item">
+        <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+          <i class="fas fa-search"></i>
+        </a>
+        <div class="navbar-search-block">
+          <form class="form-inline">
+              <div class="input-group input-group-sm">
+              <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>-->
+          </form>
+        </div>
+      </li>
+</div>
+
+<div class="emailfield">
+  <label>Welcome </label><br>
+  <label id="DEmail"></label>
+</div>
+
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+    <span class="brand-text font-weight-light">ACTION AGAINST HUNGER</span>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="dist/img/Main_logo.jpeg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">WeShare</a>
+        </div>
+      </div>
+
+      <!-- SidebarSearch Form -->
+      <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+          <div class="input-group-append">
+            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Profile
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Ways to Give
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">6</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Donate Now</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Donate Monthly</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Donate Food</p>
+                </a>
+              </li>
+            </ul>
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">
+                <p>
+                      Sign Out
+                </p>
+              </a>
+            </li>
+          </li>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+
+                    <!--    Dashboard Finished-->
+
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">CHOOSE WHAT YOU WANT TO DO!!</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#"></a></li>
+              <li class="breadcrumb-item active"></li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+        <div class="Buttons">
+        <a href="foodDetails.html">
+          <button type="button" name="button">Donate <span class="las la-hand-holding-heart"></button></a>
+        <a href="volunteer.html">
+          <button type="button" name="button" >volunteer <span class="las la-hands-helping"></button></a>
+        </div>
+      </div><!-- /.container-fluid -->
+    </div>
+    <section>
+      <br><br><br><br><br><br><br>
+      <div class="Boxes">
+        <div class="Box1">
+          <div class="Header1">
+            <label>Join to serve</label>
+            <h2>Volunteer</h2>
+          </div><br><br>
+          <label>start an fundraiser<br>Support our mission and help your neighbour.</label><br>
+          <br><br><br>
+        </div>
+        <div class="Box2">
+          <div class="Header2">
+            <label>Help fund our Mission</label>
+            <h2>Donate</h2>
+          </div><br><br>
+          <label>Find food and resources<br>near you.</label><br><br><br><br><br><br><br>
+
+        </div>
+        <div class="Box3">
+          <div class="Header3">
+            <label>Support Anti-hunger policies</label>
+            <h2>Advocate</h2>
+          </div><br><br>
+          <label>STRENGTHENING OUR NETWORK<br>
+            Food Bank unveils new Member Network Investment Plan</label><br><br><br><br>
+
+        </div>
+      </div>
+
+
+      <div class="row">
+          <div class="col-md-6">
+            <!-- Box Comment -->
+            <div class="card card-widget">
+              <div class="card-header">
+                <div class="user-block">
+                  <img class="img-circle" src="dist/img/user1.jpg" alt="User Image">
+                  <span class="username"><a href="#">Sagar Waghmare</a></span>
+                  <span class="description">Shared publicly - 7:30 PM Today</span>
+                </div>
+                <!-- /.user-block -->
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" title="Mark as read">
+                    <i class="far fa-circle"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <img class="img-fluid pad" src="dist/img/donation.jpg" alt="Photo">
+
+                <p>Today's Donation in dnyan karma from charity Action Aganist Hunger.</p>
+                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Share</button>
+                <button type="button" class="btn btn-default btn-sm"><i class="far fa-thumbs-up"></i> Like</button>
+                <span class="float-right text-muted">127 likes - 3 comments</span>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer card-comments">
+                <div class="card-comment">
+                  <!-- User image -->
+                  <img class="img-circle img-sm" src="dist/img/user3.jpg" alt="User Image">
+
+                  <div class="comment-text">
+                    <span class="username">
+                      Vaishali Sinha
+                      <span class="text-muted float-right">8:03 PM Today</span>
+                    </span><!-- /.username -->
+                    Together with the Government of Haryana and our NGO partner
+                    Doctors For You, we have helped with 100-plates in Gurugram!
+                  </div>
+                  <!-- /.comment-text -->
+                </div>
+                <!-- /.card-comment -->
+                <div class="card-comment">
+                  <!-- User image -->
+                  <img class="img-circle img-sm" src="dist/img/user4.jpg" alt="User Image">
+
+                  <div class="comment-text">
+                    <span class="username">
+                      Sumant Deokar
+                      <span class="text-muted float-right">8:03 PM Today</span>
+                    </span><!-- /.username -->
+                    Action Against Hunger has been committed to ending world hunger for nearly
+                    40 years spanning almost 50 countries.
+                  </div>
+                  <!-- /.comment-text -->
+                </div>
+                <!-- /.card-comment -->
+              </div>
+              <!-- /.card-footer -->
+              <div class="card-footer">
+                <form action="#" method="post">
+                  <img class="img-fluid img-circle img-sm" src="dist/img/user5.jpg" alt="Alt Text">
+                  <!-- .img-push is used to add margin to elements next to floating images -->
+                  <div class="img-push">
+                    <input type="text" class="form-control form-control-sm" placeholder="Press enter to post comment">
+                  </div>
+                </form>
+              </div>
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+          <div class="col-md-6">
+            <!-- Box Comment -->
+            <div class="card card-widget">
+              <div class="card-header">
+                <div class="user-block">
+                  <img class="img-circle" src="dist/img/user8-128x128.jpg" alt="User Image">
+                  <span class="username"><a href="#">Swarna Banik.</a></span>
+                  <span class="description">Shared publicly - 7:30 PM Today</span>
+                </div>
+                <!-- /.user-block -->
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" title="Mark as read">
+                    <i class="far fa-circle"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+                <!-- /.card-tools -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <!-- post text -->
+                <p>Continuously exploring how to solve the hunger problem, the organization
+                  saves the lives of children and their families through detection, prevention,
+                  and treatment, particularly after a disaster strikes.</p>
+
+                <p>One goal is to teach the communities to learn to be independent
+                  and provide for themselves. Action Against Hunger is determined
+                  to work until the world is free from hunger, pushing for long-term
+                  change across the globe.</p>
+
+                <!-- Attachment -->
+                <div class="attachment-block clearfix">
+                  <img class="attachment-img" src="dist/img/hh4.png" alt="Attachment Image">
+
+                  <div class="attachment-pushed">
+                    <h4 class="attachment-heading"><a href="#">Action Against Hunger</a></h4>
+
+                    <div class="attachment-text">
+                    The largest domestic hunger-relief organization in the United States,
+                    Feeding India connects people with food through donations, volunteers,
+                    and dedicated staff...<a href="#">more</a>
+                    </div>
+                    <!-- /.attachment-text -->
+                  </div>
+                  <!-- /.attachment-pushed -->
+                </div>
+                <!-- /.attachment-block -->
+
+                <!-- Social sharing buttons -->
+                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Share</button>
+                <button type="button" class="btn btn-default btn-sm"><i class="far fa-thumbs-up"></i> Like</button>
+                <span class="float-right text-muted">45 likes - 2 comments</span>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer card-comments">
+                <div class="card-comment">
+                  <!-- User image -->
+                  <img class="img-circle img-sm" src="dist/img/user6.jpeg" alt="User Image">
+
+                  <div class="comment-text">
+                    <span class="username">
+                      Shantanu Borah
+                      <span class="text-muted float-right">8:03 PM Today</span>
+                    </span><!-- /.username -->
+                  The covid-19 crisis and the subsequent lockdown and social distancing measures
+                  have posed a major learning threat for students in low-income communities and
+                  government schools in India, as e-learning becomes the norm.
+                  </div>
+                  <!-- /.comment-text -->
+                </div>
+                <!-- /.card-comment -->
+                <div class="card-comment">
+                  <!-- User image -->
+                  <img class="img-circle img-sm" src="dist/img/user7-128x128.jpg" alt="User Image">
+
+                  <div class="comment-text">
+                    <span class="username">
+                      Kanti Manda
+                      <span class="text-muted float-right">8:03 PM Today</span>
+                    </span><!-- /.username -->
+                    The organization takes nutritious food—before it goes to waste—from
+                    retailers, manufacturers, and farmers and gives it to people in need.
+                    But they also work with these sources to gain insight as to why so much
+                    food goes to waste.
+                  </div>
+                  <!-- /.comment-text -->
+                </div>
+                <!-- /.card-comment -->
+              </div>
+              <!-- /.card-footer -->
+              <div class="card-footer">
+                <form action="#" method="post">
+                  <img class="img-fluid img-circle img-sm" src="dist/img/user2.jpg" alt="Alt Text">
+                  <!-- .img-push is used to add margin to elements next to floating images -->
+                  <div class="img-push">
+                    <input type="text" class="form-control form-control-sm" placeholder="Press enter to post comment">
+                  </div>
+                </form>
+              </div>
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+
+        <h5 class="mb-2">  Reports</h5>
+   <div class="card card-success">
+     <div class="card-body">
+       <div class="row">
+         <div class="col-md-12 col-lg-6 col-xl-4">
+           <div class="card mb-2 bg-gradient-dark">
+             <img class="card-img-top" src="dist/img/hh7.jpg" alt="Dist Photo 1">
+             <div class="card-img-overlay d-flex flex-column justify-content-end">
+               <h5 class="card-title text-primary text-white">Feed India</h5>
+               <p class="card-text text-white pb-2 pt-1">This faith-based organization confronts India and World Leaders about their policies to end hunger everywhere. .</p>
+               <a href="#" class="text-white">Last update 2 mins ago</a>
+             </div>
+           </div>
+         </div>
+         <div class="col-md-12 col-lg-6 col-xl-4">
+           <div class="card mb-2">
+             <img class="card-img-top" src="dist/img/hh6.jpg" alt="Dist Photo 2">
+             <div class="card-img-overlay d-flex flex-column justify-content-center">
+               <h5 class="card-title text-white mt-5 pt-2">Action Against Hunger</h5>
+               <p class="card-text pb-2 pt-1 text-white">
+                 The organization believes that empowering people is<br>
+                 the key to real progress toward ending hunger.
+               </p>
+               <a href="#" class="text-white">Last update 15 hours ago</a>
+             </div>
+           </div>
+         </div>
+         <div class="col-md-12 col-lg-6 col-xl-4">
+           <div class="card mb-2">
+             <img class="card-img-top" src="dist/img/hh5.jpg" alt="Dist Photo 3">
+             <div class="card-img-overlay">
+               <h5 class="card-title text-primary">Bread for the World</h5>
+               <p class="card-text pb-1 pt-1 text-white">
+                This organization oversees feeding All City's hungry, <br>
+                a big job for anyone.</p>
+               <a href="#" class="text-primary">Last update 3 days ago</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+    </section>
+  </div><!-- /.container-fluid -->
+
+  <footer class="main-footer">
+
+  </footer>
+</div>
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard.js"></script>
+
+<script src="getEmail.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+.Buttons button{
+  border: none;
+  margin-left: 320px;
+  margin-top: 90px;
+  padding: 20px 30px 20px 30px;
+  font-size: 30px;
+}
+.Buttons button:hover{
+  color: white;
+  background-color: #606060;
+  transition: 0.1s;
+}
+.content-wrapper{
+  background: lightgray;
+}
+.temp{
+  height: 300px;
+  width: 100%;
+  background-color: black;
+}
+.Boxes{
+  height: 450px;
+  width: 100%;
+  background-color: black;
+  display: flex;
+}
+.Box1{
+  height: 450px;
+  width: 33.5%;
+  background-color: lightblue;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.Box1 label{
+  font-weight: lighter;
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.Box2{
+    height: 450px;
+    width: 33.5%;
+    background-color: pink;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.Box2 label{
+  margin-left: 55px;
+  font-weight: lighter;
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.Box3{
+    height: 450px;
+    width: 33.5%;
+    background-color: #90EE90;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.Box3 label{
+  font-weight: lighter;
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.Boxes button{
+  cursor: pointer;
+  border: none;
+  background-color: lightYellow;
+  color: black;
+  font-family: candara;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  letter-spacing: 2px;
+  box-shadow: inset 0 0 0 darkorange;
+  transition: ease-out 1s;
+}
+.Boxes button:hover{
+  box-shadow: inset 200px 0 0 0 #3CB371;
+}
+.Header1{
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  font-family: candara;
+  text-transform: uppercase;
+}
+.Header1 label{
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.Header1 h2{
+  padding-top: -5px;
+  font-weight: bolder;
+  font-size: 25px;
+}
+.Header1:hover{
+  transition: 1s ease-in-out;
+  background-color: orange;
+}
+.Header1{
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  background-color: #3CB371;
+  font-family: candara;
+  text-transform: uppercase;
+}
+.Header1 label{
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.Header1 h2{
+  padding-top: -5px;
+  font-weight: bolder;
+  font-size: 25px;
+}
+.Header1:hover{
+  transition: 0.1s ease-in-out;
+  background-color: orange;
+}
+.Header2{
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  background-color: #FF8C00;
+  font-family: candara;
+  text-transform: uppercase;
+}
+.Header2 label{
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.Header2 h2{
+  padding-top: -5px;
+  font-weight: bolder;
+  font-size: 25px;
+}
+.Header2:hover{
+  transition: 1s ease-in-out;
+  background-color: orange;
+}
+.Header3{
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  background-color: #ff6666;
+  font-family: candara;
+  text-transform: uppercase;
+}
+.Header3 label{
+  line-height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.Header3 h2{
+  padding-top: -5px;
+  font-weight: bolder;
+}
+.Header3:hover{
+  transition: 1s ease-in-out;
+  background-color: orange;
+}
+.emailfield{
+  height: 100px;
+  background-color: white;
+}
+.emailfield label{
+  margin-left: 300px;
+  color: black;
+  font-size: 25px;
+  font-family: candara;
+
+}

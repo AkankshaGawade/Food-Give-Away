@@ -1,0 +1,226 @@
+<html>
+
+<head>
+    <title>
+        Details
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js">
+    </script>
+    <style>
+        body {
+            background-image: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: black;
+            color: white;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table" id="customers">
+            <thead>
+                <th style="text-align:center">Sr.no</th>
+                <th style="text-align:center">Name</th>
+                <th style="text-align:center">Phone Number</th>
+                <th style="text-align:center">Food Type</th>
+                <th style="text-align:center">Food Name</th>
+                <th style="text-align:center">Quantity</th>
+                <th style="text-align:center">Food Cooked Date</th>
+                <th style="text-align:center">Location</th>
+                <th style="text-align:center">Accept</th>
+            </thead>
+            <tbody id="tbody1">
+            </tbody>
+        </table>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-auth.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use-->
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
+
+    <!-- This One For Alert Coded by sushmita bennisur
+     https://firebase.google.com/docs/web/setup#available-libraries   -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+    <script id="MainScript">
+
+        /* var firebaseConfig = {
+                apiKey: "AIzaSyAwM9iFaeDVtxMIo8yukv5KeNdFlX1qviU",
+                authDomain: "food-details-b64d4.firebaseapp.com",
+                projectId: "food-details-b64d4",
+                storageBucket: "food-details-b64d4.appspot.com",
+                messagingSenderId: "439365195900",
+                appId: "1:439365195900:web:1d79eb35c1769bb1ff11f9",
+                measurementId: "G-G8PL8X4E6V"
+            };
+            firebase.initializeApp(firebaseConfig);*/
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyAUm4b3FR7W5-D1-CCorUarsG80RRu8kN8",
+            authDomain: "fooddonation1-9e1bc.firebaseapp.com",
+            databaseURL: "https://fooddonation1-9e1bc-default-rtdb.firebaseio.com",
+            projectId: "fooddonation1-9e1bc",
+            storageBucket: "fooddonation1-9e1bc.appspot.com",
+            messagingSenderId: "86553733793",
+            appId: "1:86553733793:web:ea8b65fb274bd1bb6ddee0",
+            measurementId: "G-L218GG326Z"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+
+        function SelectAllData() {
+            firebase.database().ref('details').once('value', (data) => {
+                const records = data.val();
+                const recordsList = Object.entries(records)
+
+                recordsList.forEach(([documentId, record]) => {
+
+                    AddItemsToTable(
+                        documentId,
+                        record.name,
+                        record.phone,
+                        record.foodType,
+                        record.dishName,
+                        record.Quantity,
+                        record.CookedDate,
+                        record.Location
+                    )
+                })
+            });
+        }
+
+        window.onload = SelectAllData;
+
+        function deleteUser(documentId) {
+
+
+
+            swal.fire({
+                title: "Are you sure?",
+                dangerMode: true,
+                closeOnClickOutside: false,
+                showCancelButton: true,
+                type: "warning",
+                buttons: true,
+                closeOnConfirm: false,
+                closeOnCancel: false
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+
+
+                        firebase.database().ref('details/' + documentId).remove(() => Swal.fire(" Food Accepted ", " Thank You!", 'success'));
+                        const rowToDelete = document.querySelector("#" + documentId).rowIndex
+                        const table = document.querySelector("#customers").deleteRow(rowToDelete)
+                        addSerialNumber();
+
+
+                    }
+
+
+
+                    else {
+                        swal.fire(" Canceled ");
+                    }
+
+                });
+
+        }
+
+
+        function addSerialNumber() {
+            var i = 1;
+            const tableBody = document.querySelectorAll("#tbody1 tr")
+            tableBody.forEach((row) => {
+                row.querySelector("td").innerHTML = i;
+                i++;
+            })
+        }
+
+        function AddItemsToTable(documentId, name, phone, foodType, dishName, Quantity, CookedDate, Location) {
+            var tbody = document.getElementById("tbody1");
+            var trow = document.createElement('tr');
+            var td1 = document.createElement('td');
+            var td2 = document.createElement('td');
+            var td3 = document.createElement('td');
+            var td4 = document.createElement('td');
+            var td5 = document.createElement('td');
+            var td6 = document.createElement('td');
+            var td7 = document.createElement('td');
+            var td8 = document.createElement('td');
+            var td9 = document.createElement('td');
+
+            trow.id = documentId;
+            td2.innerHTML = name;
+            td3.innerHTML = phone;
+            td4.innerHTML = foodType;
+            td5.innerHTML = dishName;
+            td6.innerHTML = Quantity;
+            td7.innerHTML = CookedDate;
+            td8.innerHTML = Location;
+            td9.innerHTML = `<button onclick="deleteUser('${documentId}')">Accept</button>`;
+
+            trow.appendChild(td1);
+            trow.appendChild(td2);
+            trow.appendChild(td3);
+            trow.appendChild(td4);
+            trow.appendChild(td5);
+            trow.appendChild(td6);
+            trow.appendChild(td7);
+            trow.appendChild(td8);
+            trow.appendChild(td9);
+
+            tbody.appendChild(trow);
+
+            addSerialNumber()
+
+        }
+    </script>
+</body>
+
+</html>

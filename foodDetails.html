@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Add food deatils</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet"
+        href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="design_files/css/style.css">
+
+</head>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKsuAk1u7mNrC76V_T6ZI3CaI1OUCMEVY&callback=initMap"  type="text/javascript"></script>-->
+<script>
+    function getLocation() {
+        var x = document.getElementById("location");
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Your Browser Not Supported..!!!";
+        }
+    }
+
+    function showPosition(position) {
+        var x = document.getElementById("location");
+
+        var LocApi = "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&sensor=true";
+        $.get({
+            url: LocApi,
+            success: function (data) {
+                console.log(data);
+
+            }
+        })
+    }
+</script>
+
+<body>
+   
+    <div class="wrapper"
+        style="background-image: url(https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png)">
+        <div class="inner">
+            <div class="image-holder">
+                <img
+                    src="https://thumbs.dreamstime.com/b/food-donation-basket-different-products-vegetables-basket-text-donation-vertical-composition-food-donation-184002144.jpg">
+            </div>
+            <form action="" id="AddDetails">
+                <h3>Food Deatils</h3>
+                <div class="form-wrapper">
+                    <input id="name" type="text" placeholder="Enter Your Name" class="form-control" required>
+                </div>
+                <div class="form-wrapper">
+                    <input id="phone" type="number" placeholder="Enter Your Phone Number"
+                        pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" class="form-control" required>
+                    <i class="zmdi zmdi zmdi-lock"></i>
+                </div>
+                <div class="form-wrapper">
+                    <input id="foodType" type="text" placeholder="Enter Food Type(VEG/NON-VEG)" class="form-control"
+                        required>
+                </div>
+                <div class="form-wrapper">
+                    <input id="dishName" type="text" placeholder="Enter Food Name" class="form-control" required>
+                </div>
+                <div class="form-wrapper">
+                    <input id="Quantity" type="text" placeholder="Enter Quantity(in kg)" class="form-control" required>
+                </div>
+                <p>Food Cooked Date</p><br>
+                <div class="form-wrapper">
+                    <input id="CookedDate" type="date" placeholder="" class="form-control" required>
+                </div>
+                <div class="form-wrapper">
+                    <input id="Location" type="text" placeholder="Enter Location(City,State,PostalCode)"
+                        class="form-control" required>
+                </div>
+                <div class="form-group container-login100-form-btn">
+                    <button id="btn-signup" type="submit">
+                        submit
+                        <i class="zmdi zmdi-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="w-full text-container" style="margin-top:20%;font-size:15px">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-auth.js"></script>
+
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.4/firebase-analytics.js"></script>
+
+    <script src="index1.js"></script>
+</body>
+
+</html>

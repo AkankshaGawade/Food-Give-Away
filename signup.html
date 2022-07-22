@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Sign Up</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+        
+          <!-- MATERIAL DESIGN ICONIC FONT -->
+          <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+                
+          <!-- STYLE CSS -->
+        <link rel="stylesheet" href="design_files/css/style.css">            
+        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-storage.js"></script>
+
+        <script> 
+            // Function to check Whether both passwords are same or not. 
+            function checkPassword(form)
+            { 
+              password = form.password.value; 
+              cpassword = form.cpassword.value; 
+        
+              // If password not entered 
+              if (password == '') 
+                alert ("Please enter Password"); 
+                
+              // If confirm password not entered 
+              else if (cpassword == '') 
+                alert ("Please enter confirm password"); 
+                
+              // If Not same return False.	 
+              else if (password != cpassword) { 
+                alert ("\nPassword did not match: Please try again...") 
+                return false; 
+              } 
+              // If same return True. 
+              else{ 
+                alert("Registered Successfully!") 
+                return true; 
+              } 
+            }
+          </script>
+<script>
+  function myFunction(){
+    var x = document.getElementById("password");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+  </script>
+
+    </head>
+    <body>
+        <div class="wrapper" style="background-image: url(https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png)"> 
+          <div class="inner">
+              <div class="image-holder">
+                 <img src="https://static.vecteezy.com/system/resources/previews/001/760/384/non_2x/charity-and-donation-box-with-food-vector.jpg">
+              </div>
+            <form action="" onSubmit = "return checkPassword(this)">
+                <h3>Register</h3>
+                <div class="form-wrapper">
+                   <input id="email" type="email" maxlength="64" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email Address" class="form-control">
+                   <i class="zmdi zmdi zmdi-lock"></i>
+               </div>
+               <div class="form-wrapper">
+                   <input id="password" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="10" minlength="8" placeholder="Password" class="form-control">
+                   <input type="checkbox" onclick="myFunction()">Show Password
+               </div><br>
+               <div class="form-wrapper">
+                   <input id="cpassword" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength="10" minlength="8" placeholder="Confirm Password" class="form-control">
+                   <i class="zmdi zmdi zmdi-lock"></i>
+               </div>
+               <div class="form-group container-login100-form-btn">
+                   <button id="btn-signup" type="button">
+                       Register
+                       <i class="zmdi zmdi-arrow-right"></i>
+                   </button>
+               </div>
+                   <div class="w-full text-container" style="margin-top:10%;font-size:15px">
+                       <a href="signIn.html" class="text-dark">
+                           Already have an account?
+                       </a>
+                  </div>
+            </form>
+         </div>
+    </div>  
+    <script src="index.js"></script>
+    </body>
+</html>
